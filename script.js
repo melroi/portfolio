@@ -1,9 +1,9 @@
-/* Set the width of the side navigation to 250px */
+// Ouvre le menu latéral
 function openNav() {
-  document.getElementById("mySidenav").style.width = "300px";
+  document.getElementById("mySidenav").style.width = "250px"; // Largeur du menu
 }
 
-/* Set the width of the side navigation to 0 */
+// Ferme le menu latéral
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }

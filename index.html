@@ -2,38 +2,39 @@
 <html lang="fr">
 
 <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Melchior HADROT</title>
-     <link rel="stylesheet" href="styles.css">
-     <script src="script.js"></script>
-     <link rel="icon" href="assets/icons/icon_logo.svg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melchior HADROT</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <link rel="icon" href="assets/icons/icon_logo.svg">
 </head>
 
 <body bgcolor="#E6E6FA">
-     <!-- ==HEADER== -->
-     <header class="header" id="header">
-     </header>
-     <!-- ==FIN HEADER== -->
+    <!-- Bannière fixe -->
+    <div class="banner">
+        <img src="assets/image/icon/hamburger1000x1000.png" alt="Menu" width="40px" onclick="openNav()">
+        <h1>Portfolio</h1>
+    </div>
 
-     <div id="mySidenav" class="sidenav">
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          <a href="#aPropos" class="linkNav">À propos de moi</a>
-          <a href="#formation" class="linkNav">Formation</a>
-          <a href="#expPro" class="linkNav">Expériences</a>
-          <a href="#compétences" class="linkNav">Compétences</a>
-          <a href="#mesProjet" class="linkNav">Projets</a>
-          <a href="#divers" class="linkNav">Divers</a>
-          <a href="#cv" class="linkNav">C.V</a>
-          <a href="#meContacter" class="linkNav">Contact</a>
-     </div>
+    <!-- Menu latéral -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#aPropos" class="linkNav">À propos de moi</a>
+        <a href="#formation" class="linkNav">Formation</a>
+        <a href="#expPro" class="linkNav">Expériences</a>
+        <a href="#compétences" class="linkNav">Compétences</a>
+        <a href="#mesProjet" class="linkNav">Projets</a>
+        <a href="#divers" class="linkNav">Divers</a>
+        <a href="#cv" class="linkNav">C.V</a>
+        <a href="#meContacter" class="linkNav">Contact</a>
+    </div>
 
-     <!-- Icône pour ouvrir le menu -->
-     <span onclick="openNav()">
-          <img src="C:\Users\melchior\Documents\GitHub\portfolio\hamburger1000x1000.png" 
-               width="40px" 
-               style="padding-top: 40px; padding-left: 40px;">
-     </span>
+    <!-- Contenu principal -->
+    <div class="content">
+        <h2>Bienvenue</h2>
+        <p>Voici mon site web personnel. Utilisez le menu pour naviguer entre les sections.</p>
+    </div>
 </body>
 
 </html>
