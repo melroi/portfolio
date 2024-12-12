@@ -5,7 +5,9 @@
   font-family: "Luckiest Guy", cursive;
   font-weight: 400;
   font-style: normal;
-}/* Style général */
+}
+
+/* Style général */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -46,30 +48,74 @@ body {
   padding-top: 60px;
 }
 
+/* S'assurer que les boutons du menu n'affectent pas la croix */
 .sidenav a {
-  padding: 8px 8px 8px 32px;
+  padding: 16px 32px;
   text-decoration: none;
   font-size: 18px;
   color: white;
   display: block;
   transition: 0.3s;
+  box-sizing: border-box; /* Inclut les bordures dans la largeur totale */
+  background: none; /* Pas de fond sur les liens */
+  border: none; /* Pas de bordure sur les liens */
 }
 
 .sidenav a:hover {
-  color: #f1f1f1;
+  color: #111; /* Texte noir */
+  background-color: #f1f1f1; /* Fond clair */
+  border-bottom: none; /* Supprime la ligne de séparation */
+  transform: translateX(10px); /* Petit décalage vers la droite */
 }
 
+/* Supprime la bordure pour le dernier bouton */
+.sidenav a:last-child {
+  border-bottom: none;
+}
+
+/* Style spécifique à la croix de fermeture */
 .sidenav .closebtn {
   position: absolute;
   top: 0;
   right: 25px;
   font-size: 36px;
-  margin-left: 50px;
   color: white;
+  padding: 0; /* Supprime les marges internes */
+  border: none; /* Pas de bordure */
+  background: none; /* Pas de couleur de fond */
+  transition: color 0.3s, transform 0.3s; /* Transition uniquement sur la couleur et la rotation */
+  z-index: 2000; /* Assure que la croix est au-dessus de tout le contenu */
+}
+
+.sidenav .closebtn:hover {
+  color: #f1f1f1; /* Change la couleur de la croix au survol */
+  transform: rotate(90deg); /* Effet de rotation sur la croix */
+}
+
+
+
+/* Bouton d'ouverture du menu */
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: none;
+  padding: 10px 15px;
+  border: none;
+  transition: 0.3s;
+}
+
+/* Au survol du bouton d'ouverture */
+.openbtn:hover {
+  background-color: #444;
 }
 
 /* Contenu principal */
 .content {
   margin-top: 60px; /* Laisse de l'espace sous la bannière */
   padding: 20px;
+}
+
+#bienvenue {
+  color: aqua;
 }
