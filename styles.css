@@ -62,8 +62,7 @@ body {
 }
 
 .sidenav a:hover {
-  color: #111; /* Texte noir */
-  background-color: #f1f1f1; /* Fond clair */
+  color: whitesmoke; /* Texte noir */
   border-bottom: none; /* Supprime la ligne de séparation */
   transform: translateX(10px); /* Petit décalage vers la droite */
 }
@@ -80,6 +79,8 @@ body {
   right: 25px;
   font-size: 36px;
   color: white;
+  
+  background-color: #f1f1f1; /* Fond clair */
   padding: 0; /* Supprime les marges internes */
   border: none; /* Pas de bordure */
   background: none; /* Pas de couleur de fond */
