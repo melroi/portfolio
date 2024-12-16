@@ -11,6 +11,13 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  background-color: #F5F5F5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
 }
 
 /* Bannière */
@@ -93,8 +100,6 @@ body {
   transform: rotate(90deg); /* Effet de rotation sur la croix */
 }
 
-
-
 /* Bouton d'ouverture du menu */
 .openbtn {
   font-size: 20px;
@@ -111,12 +116,59 @@ body {
   background-color: #444;
 }
 
+
+
+
+
 /* Contenu principal */
 .content {
   margin-top: 60px; /* Laisse de l'espace sous la bannière */
   padding: 20px;
 }
 
-#bienvenue {
-  color: aqua;
+
+/* Conteneur principal */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border: 2px solid #ccc;
+  border-radius: 15px;
+  padding: 20px;
+  max-width: 800px;
+  width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Zone de texte */
+.text-area {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.text-area .title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.text-area p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+}
+
+/* Zone d'image */
+.image-area {
+  flex-shrink: 0;
+  margin-left: 20px;
+}
+
+.image-area img {
+  max-width: 150px;
+  max-height: 150px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
