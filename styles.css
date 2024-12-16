@@ -126,6 +126,7 @@ body {
 
 
 /* Conteneur principal */
+/* Conteneur principal */
 .container {
   display: flex;
   align-items: center;
@@ -134,21 +135,34 @@ body {
   border: 2px solid #ccc;
   border-radius: 15px;
   padding: 20px;
-  max-width: 800px;
-  width: 90%;
+  width: calc(100% - 40px); /* Utilise toute la largeur moins 40px de marge (20px de chaque côté) */
+  margin: 10px auto; /* Centre le conteneur avec un espacement vertical */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Zone de texte */
+
+/* Conteneur de formation */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border: 2px solid #ccc;
+  border-radius: 15px;
+  padding: 20px;
+  width: 100%; /* Remplir toute la largeur */
+  max-width: 100%; /* Assurez-vous qu'il ne dépasse pas la largeur */
+  box-sizing: border-box; /* Inclut les bordures dans la largeur totale */
+  margin-bottom: 20px; /* Espace entre les conteneurs */
+  padding-left: 15px;
+  padding-right: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Zone de texte dans le conteneur */
 .text-area {
   flex: 1;
   padding-right: 20px;
-}
-
-.text-area .title {
-  font-size: 24px;
-  margin-bottom: 10px;
-  color: #333;
 }
 
 .text-area p {
@@ -157,7 +171,7 @@ body {
   color: #666;
 }
 
-/* Zone d'image */
+/* Zone d'image dans le conteneur */
 .image-area {
   flex-shrink: 0;
   margin-left: 20px;
@@ -169,4 +183,10 @@ body {
   border-radius: 10px;
   object-fit: cover;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Marges autour du conteneur de formation */
+#formation {
+  padding: 0 20px; /* Éviter que le contenu touche les bords de la page */
+  width: 100%;
 }
