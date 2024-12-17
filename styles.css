@@ -140,6 +140,13 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Style général pour tous les h1 */
+h1 {
+  text-align: left; /* Aligne le texte à gauche */
+  margin: 10px 0; /* Ajuste l'espacement vertical */
+  padding-left: 0px; /* Ajoute un léger décalage par rapport au bord gauche */
+  box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+}
 
 /* Conteneur de formation */
 .container {
@@ -187,6 +194,11 @@ body {
 
 /* Marges autour du conteneur de formation */
 #formation {
+  padding: 0 20px; /* Éviter que le contenu touche les bords de la page */
+  width: 100%;
+}
+
+#expPro {
   padding: 0 20px; /* Éviter que le contenu touche les bords de la page */
   width: 100%;
 }
