@@ -16,10 +16,14 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh; /* Utilisation de min-height */
   padding: 20px;
-  padding-top: 1000px; /* Compense la hauteur de la bannière */
+  padding-top: 0px; /* Ajuste pour compenser la hauteur de la bannière */
+  box-sizing: border-box;
 }
+
+
+
 
 /* Bannière */
 .banner {
@@ -121,6 +125,8 @@ body {
 /* Contenu principal */
 .content {
   margin-top: 80px; /* Ajuste l'espace pour compenser la hauteur de la bannière */
+  padding: 20px;
+  flex: 1; /* Prend tout l'espace vertical disponible */
   padding: 20px;
 }
 
@@ -284,3 +290,86 @@ html, body {
   overflow-x: hidden; /* Empêche les barres de défilement horizontales */
 }
 
+/* Section Contact */
+/* Section Contact en bas */
+.contact-section {
+  background-color: #white;
+  color: black;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  margin-top: auto; /* Repousse vers le bas */
+  border-top: 3px solid black; /* Ligne supérieure noire */
+}
+
+.contact-section h1 {
+  font-size: 2em;
+  color: black; /* Titre en violet */
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  margin: 10px 0; /* Espacement entre les lignes */
+  font-size: 1.1em;
+  color: #333; /* Texte en gris foncé */
+}
+
+.contact-info a {
+  color: black; /* Liens en violet */
+  text-decoration: none; /* Supprime le soulignement des liens */
+  font-weight: bold;
+  transition: color 0.3s ease; /* Animation de couleur au survol */
+}
+
+.contact-info a:hover {
+  color: blue; /* Violet clair au survol */
+}
+
+/* Section Divers */
+#divers {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f4f4f4; /* Différente couleur de fond */
+  margin-bottom: 40px;
+}
+
+#divers h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.divers-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
+  gap: 30px; /* Espacement entre les cases */
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.divers-box {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+}
+
+.divers-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.divers-box h3 {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+
+.divers-box p {
+  font-size: 1em;
+  color: #555;
+  margin-top: 10px;
+}
