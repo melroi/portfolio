@@ -18,7 +18,7 @@ body {
   justify-content: center;
   height: 100vh;
   padding: 20px;
-  padding-top: 550px; /* Compense la hauteur de la bannière */
+  padding-top: 1000px; /* Compense la hauteur de la bannière */
 }
 
 /* Bannière */
