@@ -128,7 +128,6 @@ body {
   padding: 20px;
   flex: 1; /* Prend tout l'espace vertical disponible */
   padding: 20px;
-  
 }
 
 
@@ -286,7 +285,7 @@ html {
   box-sizing: border-box; /* Inclut padding et border dans la largeur/hauteur */
 }
 
-html,body {
+html, body {
 
   overflow-x: hidden; /* Empêche les barres de défilement horizontales */
 }
@@ -373,31 +372,4 @@ html,body {
   font-size: 1em;
   color: #555;
   margin-top: 10px;
-}
-
-
-/* Conteneur pour le texte et l'image */
-.about-details {
-  display: flex;
-  justify-content: space-between; /* Espace entre le texte et l'image */
-  align-items: center; /* Aligne verticalement le texte et l'image */
-  gap: 20px; /* Ajoute un petit écart entre le texte et l'image */
-}
-
-/* Style du texte */
-.text-area {
-  max-width: 60%; /* Limite la largeur du texte */
-}
-
-/* Style de l'image */
-.image-area img {
-  padding-right: ;
-  height: auto; /* Maintient la proportion de l'image */
-  object-fit: cover; /* Couvre le conteneur sans déformer l'image */
-  margin-left: 100px;
-}
-
-
-.image-area {
-  margin-left: 100px; /* Ajoute un écart de 20px entre le conteneur de l'image et le bord gauche */
 }
