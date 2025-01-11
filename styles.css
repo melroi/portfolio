@@ -1,29 +1,25 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 
-.luckiest-guy-regular {
-  font-family: "Luckiest Guy", cursive;
-  font-weight: 400;
-  font-style: normal;
+/* Reset et styles de base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* Style général */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+}
+
 body {
-  margin: 0;
   font-family: Arial, sans-serif;
   background-color: #F5F5F5;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh; /* Utilisation de min-height */
-  padding: 20px;
-  padding-top: 0px; /* Ajuste pour compenser la hauteur de la bannière */
-  box-sizing: border-box;
+  padding-top: 60px;
+  line-height: 1.6;
 }
-
-
-
 
 /* Bannière */
 .banner {
@@ -32,19 +28,19 @@ body {
   left: 0;
   width: 100%;
   background-color: whitesmoke;
-  color: black;
-  height: 60px; /* Hauteur de la bannière */
+  height: 60px;
   display: flex;
   align-items: center;
   padding: 0 20px;
-  z-index: 1000; /* S'assure qu'elle passe au-dessus du contenu */
-  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
 }
-
 
 .banner img {
   cursor: pointer;
   margin-right: 15px;
+  width: 40px;
+  height: 40px;
 }
 
 /* Menu latéral */
@@ -52,7 +48,7 @@ body {
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 1000;
+  z-index: 1001;
   top: 0;
   left: 0;
   background-color: #111;
@@ -61,7 +57,6 @@ body {
   padding-top: 60px;
 }
 
-/* S'assurer que les boutons du menu n'affectent pas la croix */
 .sidenav a {
   padding: 16px 32px;
   text-decoration: none;
@@ -69,307 +64,276 @@ body {
   color: white;
   display: block;
   transition: 0.3s;
-  box-sizing: border-box; /* Inclut les bordures dans la largeur totale */
-  background: none; /* Pas de fond sur les liens */
-  border: none; /* Pas de bordure sur les liens */
 }
 
 .sidenav a:hover {
-  color: whitesmoke; /* Texte noir */
-  border-bottom: none; /* Supprime la ligne de séparation */
-  transform: translateX(10px); /* Petit décalage vers la droite */
+  color: #f1f1f1;
+  transform: translateX(10px);
 }
 
-/* Supprime la bordure pour le dernier bouton */
-.sidenav a:last-child {
-  border-bottom: none;
-}
-
-/* Style spécifique à la croix de fermeture */
 .sidenav .closebtn {
   position: absolute;
   top: 0;
   right: 25px;
   font-size: 36px;
   color: white;
-  
-  background-color: #f1f1f1; /* Fond clair */
-  padding: 0; /* Supprime les marges internes */
-  border: none; /* Pas de bordure */
-  background: none; /* Pas de couleur de fond */
-  transition: color 0.3s, transform 0.3s; /* Transition uniquement sur la couleur et la rotation */
-  z-index: 2000; /* Assure que la croix est au-dessus de tout le contenu */
-}
-
-.sidenav .closebtn:hover {
-  color: #f1f1f1; /* Change la couleur de la croix au survol */
-  transform: rotate(90deg); /* Effet de rotation sur la croix */
-}
-
-/* Bouton d'ouverture du menu */
-.openbtn {
-  font-size: 20px;
-  cursor: pointer;
-  background-color: #111;
-  color: none;
-  padding: 10px 15px;
-  border: none;
+  padding: 8px;
   transition: 0.3s;
 }
 
-/* Au survol du bouton d'ouverture */
-.openbtn:hover {
-  background-color: #444;
+.sidenav .closebtn:hover {
+  color: #f1f1f1;
+  transform: rotate(90deg);
+}
+/* Style spécifique pour la section À propos */
+#aPropos {
+  margin-bottom: 30px;
 }
 
-/* Contenu principal */
 .content {
-  margin-top: 80px; /* Ajuste l'espace pour compenser la hauteur de la bannière */
+  position: relative; /* Pour le positionnement de l'image */
   padding: 20px;
-  flex: 1; /* Prend tout l'espace vertical disponible */
-  padding: 20px;
+  margin-top: 80px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+/* Style spécifique pour l'image dans la section À propos */
+.content .image-area {
+  float: right; /* Aligne l'image à droite */
+  margin-left: 20px; /* Espace entre le texte et l'image */
+  margin-bottom: 20px; /* Espace en bas de l'image */
+}
 
-/* Conteneur principal */
-/* Conteneur principal */
+.content .image-area img {
+  max-width: 150px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Pour éviter les problèmes de float */
+.content::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Media query pour la version mobile */
+@media screen and (max-width: 768px) {
+  .content .image-area {
+    float: none;
+    margin: 20px auto;
+    text-align: center;
+  }
+}
+
+/* Conteneurs */
 .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   background-color: #ffffff;
   border: 2px solid #ccc;
   border-radius: 15px;
   padding: 20px;
-  width: calc(100% - 40px); /* Utilise toute la largeur moins 40px de marge (20px de chaque côté) */
-  margin: 10px auto; /* Centre le conteneur avec un espacement vertical */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Style général pour tous les h1 */
-h1 {
-  text-align: left; /* Aligne le texte à gauche */
-  margin: 10px 0; /* Ajuste l'espacement vertical */
-  padding-left: 0px; /* Ajoute un léger décalage par rapport au bord gauche */
-  box-sizing: border-box; /* Inclut le padding dans la largeur totale */
-}
-
-/* Conteneur de formation */
-.container {
+  margin: 20px 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background-color: #ffffff;
-  border: 2px solid #ccc;
-  border-radius: 15px;
-  padding: 20px;
-  width: 100%; /* Remplir toute la largeur */
-  max-width: 100%; /* Assurez-vous qu'il ne dépasse pas la largeur */
-  box-sizing: border-box; /* Inclut les bordures dans la largeur totale */
-  margin-bottom: 20px; /* Espace entre les conteneurs */
-  padding-left: 15px;
-  padding-right: 15px;
+  gap: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Zone de texte dans le conteneur */
 .text-area {
   flex: 1;
-  padding-right: 20px;
 }
 
-.text-area p {
-  font-size: 16px;
-  line-height: 1.5;
-  color: #666;
-}
-
-/* Zone d'image dans le conteneur */
 .image-area {
   flex-shrink: 0;
-  margin-left: 20px;
 }
 
 .image-area img {
-  max-width: 150px;
-  max-height: 150px;
+  width: 150px;
+  height: 150px;
   border-radius: 10px;
   object-fit: cover;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Marges autour du conteneur de formation */
-#formation {
-  padding: 0 20px; /* Éviter que le contenu touche les bords de la page */
-  width: 100%;
-}
-
-#expPro {
-  padding: 0 20px; /* Éviter que le contenu touche les bords de la page */
-  width: 100%;
-}
-
-#competences {
-  padding: 0 20px; /* Éviter que le contenu touche les bords de la page */
-  width: 100%;
-}
-/* Conteneur principal des compétences humaines */
-/* Conteneur principal des compétences */
+/* Compétences */
 .skills-container {
-  display: grid; /* Utilisation de CSS Grid */
-  grid-template-columns: repeat(4, 1fr); /* 4 colonnes égales */
-  gap: 20px; /* Espacement entre les cases */
-  padding: 20px; /* Ajout de padding à l'intérieur */
-  background-color: #ffffff; /* Fond blanc pour s'aligner avec les autres conteneurs */
-  border-radius: 15px; /* Coins arrondis */
-  border: 2px solid #ccc; /* Bordure légère */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre pour un effet de profondeur */
-  width: 100%; /* Remplir toute la largeur disponible */
-  max-width: 100%; /* Assurer que ça ne dépasse pas la largeur disponible */
-  box-sizing: border-box; /* Inclure le padding et la bordure dans la largeur */
-  margin-bottom: 20px; /* Espacement entre les conteneurs */
-  padding-left: 15px;
-  padding-right: 15px;
-  margin: 0 auto; /* Centrer le container */
-}
-
-
-/* Style de chaque boîte de compétence */
-.skill-box {
-  background-color: #ffffff; /* Fond blanc */
-  border: 1px solid #ccc; /* Bordure légère */
-  border-radius: 8px; /* Coins arrondis */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: center; /* Centrage du contenu */
-  padding: 15px;
-  transition: transform 0.3s ease-in-out;
-  box-sizing: border-box; /* Assure que la taille inclut la bordure et le padding */
-  width: 100%; /* Remplir toute la largeur disponible dans chaque case */
-  max-width: 100%; /* S'assure que la largeur ne dépasse pas */
-  margin: 0; /* Évite tout débordement */
-}
-
-/* Logo des compétences */
-.skill-icon {
-  width: 50px; /* Taille du logo */
-  height: 50px;
-  margin-bottom: 10px;
-}
-
-/* Titre de la compétence */
-.skill-box h3 {
-  margin: 10px 0;
-  font-size: 18px;
-  color: #333;
-}
-
-/* Description de la compétence */
-.skill-box p {
-  font-size: 14px;
-  color: #666;
-  line-height: 1.5;
-}
-
-/* Optionnel : Pour garantir que le body prend toute la largeur sans débordement */
-body {
-
-  overflow-x: hidden; /* Empêcher un débordement horizontal sur toute la page */
-}
-
-/* Optionnel : Empêcher les barres de défilement globales */
-html {
-  overflow-x: hidden;
-}
-
-* {
-  box-sizing: border-box; /* Inclut padding et border dans la largeur/hauteur */
-}
-
-html, body {
-
-  overflow-x: hidden; /* Empêche les barres de défilement horizontales */
-}
-
-/* Section Contact */
-/* Section Contact en bas */
-.contact-section {
-  background-color: #white;
-  color: black;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
   padding: 20px;
-  width: 100%;
+  background-color: #ffffff;
+  border-radius: 15px;
+  border: 2px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skill-box {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
   text-align: center;
-  margin-top: auto; /* Repousse vers le bas */
-  border-top: 3px solid black; /* Ligne supérieure noire */
+  transition: transform 0.3s ease;
 }
 
-.contact-section h1 {
-  font-size: 2em;
-  color: black; /* Titre en violet */
-  margin-bottom: 10px;
-}
-
-.contact-info p {
-  margin: 10px 0; /* Espacement entre les lignes */
-  font-size: 1.1em;
-  color: #333; /* Texte en gris foncé */
-}
-
-.contact-info a {
-  color: black; /* Liens en violet */
-  text-decoration: none; /* Supprime le soulignement des liens */
-  font-weight: bold;
-  transition: color 0.3s ease; /* Animation de couleur au survol */
-}
-
-.contact-info a:hover {
-  color: blue; /* Violet clair au survol */
-}
-
-/* Section Divers */
-#divers {
-  text-align: center;
-  padding: 40px 20px;
-  background-color: #f4f4f4; /* Différente couleur de fond */
-  margin-bottom: 40px;
-}
-
-#divers h1 {
-  font-size: 2em;
-  margin-bottom: 20px;
+.skill-box:hover {
+  transform: translateY(-5px);
 }
 
 .divers-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
-  gap: 30px; /* Espacement entre les cases */
-  max-width: 900px;
+  grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+  grid-template-rows: repeat(3, auto); /* 3 lignes */
+  gap: 20px;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 20px;
 }
 
 .divers-box {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.content {
+  position: relative;
   padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 80px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 100px; /* Ajoutez cette ligne pour laisser de l'espace pour le footer */
+}
+
+
+/* Section Contact (Footer) */
+.contact-section {
+  width: 100%; /* Occupe toute la largeur de la fenêtre */
+  background-color: white;
+  padding: 20px 10px; /* Réduisez l'espacement interne */
+  text-align: center; /* Centrer le texte */
+  border-top: 3px solid black; /* Bordure en haut */
+  position: fixed; /* Fixé en bas de la page */
+  bottom: 0;
+  left: 0;
+  z-index: 1; /* Assure que le footer est au-dessus des autres éléments */
+}
+
+/* Style pour les liens de contact */
+.contact-info a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s; /* Transition pour le changement de couleur */
+}
+
+.contact-info a:hover {
+  color: #0066cc; /* Couleur au survol */
+}
+
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .image-area {
+    margin-top: 20px;
+  }
+  
+  .skills-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .divers-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, auto);
+  }
+}
+
+
+/* Style pour la section CV */
+.cv-section {
+  background-color: #ffffff;
+  border: 2px solid #ccc;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px 0;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  text-align: left;
+  gap: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.divers-icon {
-  width: 50px;
-  height: 50px;
+.cv-preview {
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.divers-box h3 {
-  font-size: 1.3em;
-  margin-bottom: 10px;
+.cv-button {
+  background-color: #4a90e2;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
-.divers-box p {
-  font-size: 1em;
-  color: #555;
-  margin-top: 10px;
+.cv-button:hover {
+  background-color: #357abd;
+}
+
+.cv-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Media queries */
+@media screen and (max-width: 768px) {
+  .about-content,
+  .cv-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .image-area img,
+  .cv-preview {
+    margin: 10px 0;
+  }
+}
+
+
+.about-container {
+  display: flex;
+  align-items: center;
+}
+
+.text-area {
+  flex: 1;
+}
+
+.image-area {
+  margin-left: 20px;
+}
+
+.image-area img {
+  max-width: 150px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
