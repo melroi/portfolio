@@ -19,6 +19,13 @@ body {
   background-color: #F5F5F5;
   padding-top: 60px;
   line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container {
+  flex: 1;
 }
 
 /* Bannière */
@@ -85,13 +92,14 @@ body {
   color: #f1f1f1;
   transform: rotate(90deg);
 }
+
 /* Style spécifique pour la section À propos */
 #aPropos {
   margin-bottom: 30px;
 }
 
 .content {
-  position: relative; /* Pour le positionnement de l'image */
+  position: relative;
   padding: 20px;
   margin-top: 80px;
   max-width: 1200px;
@@ -101,9 +109,9 @@ body {
 
 /* Style spécifique pour l'image dans la section À propos */
 .content .image-area {
-  float: right; /* Aligne l'image à droite */
-  margin-left: 20px; /* Espace entre le texte et l'image */
-  margin-bottom: 20px; /* Espace en bas de l'image */
+  float: right;
+  margin-left: 20px;
+  margin-bottom: 20px;
 }
 
 .content .image-area img {
@@ -118,15 +126,6 @@ body {
   content: "";
   display: table;
   clear: both;
-}
-
-/* Media query pour la version mobile */
-@media screen and (max-width: 768px) {
-  .content .image-area {
-    float: none;
-    margin: 20px auto;
-    text-align: center;
-  }
 }
 
 /* Conteneurs */
@@ -183,10 +182,11 @@ body {
   transform: translateY(-5px);
 }
 
+/* Section Divers */
 .divers-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
-  grid-template-rows: repeat(3, auto); /* 3 lignes */
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, auto);
   gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
@@ -201,28 +201,15 @@ body {
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-.content {
-  position: relative;
-  padding: 20px;
-  margin-top: 80px;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 100px; /* Ajoutez cette ligne pour laisser de l'espace pour le footer */
-}
-
 
 /* Section Contact (Footer) */
 .contact-section {
-  width: 100%; /* Occupe toute la largeur de la fenêtre */
+  width: 100%;
   background-color: white;
-  padding: 20px 10px; /* Réduisez l'espacement interne */
-  text-align: center; /* Centrer le texte */
-  border-top: 3px solid black; /* Bordure en haut */
-  position: fixed; /* Fixé en bas de la page */
-  bottom: 0;
-  left: 0;
-  z-index: 1; /* Assure que le footer est au-dessus des autres éléments */
+  padding: 20px;
+  text-align: center;
+  border-top: 3px solid black;
+  margin-top: 50px;
 }
 
 /* Style pour les liens de contact */
@@ -230,37 +217,14 @@ body {
   color: black;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s; /* Transition pour le changement de couleur */
+  transition: color 0.3s;
 }
 
 .contact-info a:hover {
-  color: #0066cc; /* Couleur au survol */
+  color: #0066cc;
 }
 
-
-/* Media Queries */
-@media screen and (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .image-area {
-    margin-top: 20px;
-  }
-  
-  .skills-container {
-    grid-template-columns: 1fr;
-  }
-  
-  .divers-container {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, auto);
-  }
-}
-
-
-/* Style pour la section CV */
+/* Section CV */
 .cv-section {
   background-color: #ffffff;
   border: 2px solid #ccc;
@@ -281,19 +245,31 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* Style du bouton CV */
 .cv-button {
-  background-color: #4a90e2;
-  color: white;
+  display: inline-block;
   padding: 12px 24px;
-  border: none;
+  background-color: #1a73e8;
+  color: white;
+  text-decoration: none;
   border-radius: 5px;
+  font-weight: bold;
+  border: none;
   cursor: pointer;
+  transition: all 0.3s ease;
   font-size: 16px;
-  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .cv-button:hover {
-  background-color: #357abd;
+  background-color: #1557b0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cv-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .cv-content {
@@ -305,18 +281,31 @@ body {
 
 /* Media queries */
 @media screen and (max-width: 768px) {
+  .content .image-area {
+    float: none;
+    margin: 20px auto;
+    text-align: center;
+  }
+
   .about-content,
   .cv-section {
     flex-direction: column;
     text-align: center;
   }
-  
+
+  .container {
+    flex-direction: column;
+  }
+
+  .divers-container {
+    grid-template-columns: 1fr;
+  }
+
   .image-area img,
   .cv-preview {
     margin: 10px 0;
   }
 }
-
 
 .about-container {
   display: flex;
@@ -329,11 +318,4 @@ body {
 
 .image-area {
   margin-left: 20px;
-}
-
-.image-area img {
-  max-width: 150px;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
