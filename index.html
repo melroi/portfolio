@@ -48,11 +48,11 @@
                         J'ai 18 ans et je suis étudiant en première année de BUT Réseaux et Télécommunications à l'IUT
                         Clermont Auvergne d'Aubière.
                         Passionné par la technologie, j'aime explorer des domaines variés comme la programmation,
-                        l'impression et la modélisation 3D, ainsi que l'électronique.
+                        l'impression et la modélisation 3D, ainsi que l'électronique.Je suis à la recherche un contrat d'alternance pour l'année de 2025-2026 sur un rythme de 1 mois/1 mois
                     </p>
                 </div>
-                <div class="image-area">
-                    <img src="assets/image/image_formation/logo_uca.png" alt="IUT Clermont Auvergne">
+                <div class = "tete">
+                    <img src="assets/image/icon/pfp.png" alt="Ma photo" width="400" height="550">
                 </div>
             </div>
         </div>
@@ -145,75 +145,180 @@
             </div>
         </div>
 
-        <div id="competences" class="content">
-            <h1>Compétences technique</h1>
-            <div class="container">
-                <div class="text-area">
-                    <p>
-                        <strong>Lorem ipsum</strong><br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, nemo.<br>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum id officia incidunt? Similique ad
-                        culpa, earum corrupti labore natus cumque?
-                    </p>
+        <div id="techniques" class="content">
+            <h1>Compétences techniques</h1>
+            <div class="techniques-container">
+                
+                <div class="menu-section">
+                    <div class="main-menu-item active" data-category="reseaux">Réseaux</div>
+                    <div class="main-menu-item" data-category="programmation">Programmation</div>
+                    <div class="main-menu-item" data-category="telecom">Télécommunications</div>
+                    <div class="main-menu-item" data-category="telephonie">Téléphonie</div>
+                    <div class="main-menu-item" data-category="securite">Sécurité</div>
+                    <div class="main-menu-item" data-category="langues">Langues</div>
                 </div>
-                <div class="image-area">
-                    <img src="https://via.placeholder.com/150" alt="n/a">
-                </div>
-            </div>
-        </div>
-
-        <!-- Section Divers -->
-        <div id="divers" class="content">
-            <h1>Divers</h1>
-            <div class="divers-container">
-                <div class="divers-box">
-                    <div>
-                        <h3>Titre 1</h3>
-                        <p>Description 1</p>
-                    </div>
-                    <img src="https://via.placeholder.com/50" alt="Placeholder Image" class="divers-icon">
-                </div>
-                <div class="divers-box">
-                    <div>
-                        <h3>Titre 2</h3>
-                        <p>Description 2</p>
-                    </div>
-                    <img src="https://via.placeholder.com/50" alt="Placeholder Image" class="divers-icon">
-                </div>
-                <div class="divers-box">
-                    <div>
-                        <h3>Titre 3</h3>
-                        <p>Description 3</p>
-                    </div>
-                    <img src="https://via.placeholder.com/50" alt="Placeholder Image" class="divers-icon">
-                </div>
-                <div class="divers-box">
-                    <div>
-                        <h3>Titre 4</h3>
-                        <p>Description 4</p>
-                    </div>
-                    <img src="https://via.placeholder.com/50" alt="Placeholder Image" class="divers-icon">
+                <div class="skills-section" id="skillsContent">
+                    <!-- Le contenu sera chargé dynamiquement via JavaScript -->
                 </div>
             </div>
-        </div>
+        
+            <script>
+                const skillsData = {
+                    reseaux: [
+                        { title: "Configurer un réseau informatique", content: "Configuration et maintenance des réseaux locaux, VLANs, routage...", level: 85 },
+                        { title: "Installer des machines virtuelles", content: "Virtualisation avec VMware, VirtualBox, configuration et déploiement...", level: 90 },
+                        { title: "Administration Réseau", content: "Gestion des services réseau, monitoring, troubleshooting...", level: 75 }
+                    ],
+                    programmation: [
+                        { title: "Développement Web", content: "HTML, CSS, JavaScript, PHP, frameworks modernes...", level: 80 },
+                        { title: "Programmation orientée objet", content: "Java, Python, conception orientée objet...", level: 70 }
+                    ],
+                    telecom: [
+                        { title: "Protocoles de communication", content: "TCP/IP, UDP, protocols de routage...", level: 85 },
+                        { title: "Infrastructure télécom", content: "Installation et maintenance des équipements...", level: 75 }
+                    ],
+                    telephonie: [
+                        { title: "VoIP", content: "Configuration et maintenance des systèmes VoIP...", level: 80 },
+                        { title: "Systèmes téléphoniques", content: "Installation et gestion des PABX...", level: 70 }
+                    ],
+                    securite: [
+                        { title: "Sécurité réseau", content: "Firewalls, IDS/IPS, VPN...", level: 85 },
+                        { title: "Cybersécurité", content: "Analyse des menaces, protection des données...", level: 75 }
+                    ],
+                    langues: [
+                        { title: "Anglais technique", content: "Communication professionnelle, documentation technique...", level: 80 },
+                        { title: "Français", content: "Rédaction technique, communication professionnelle...", level: 95 }
+                    ]
+                };
+        
+                // Fonction pour mettre à jour le contenu des compétences en fonction de la catégorie sélectionnée
+                function updateSkillsContent(category) {
+                    // Récupère la section qui contiendra les compétences
+                    const skillsSection = document.getElementById('skillsContent');
+                    // Récupère les compétences de la catégorie sélectionnée
+                    const skills = skillsData[category];
+                    
+                    // Initialise la chaîne HTML
+                    let html = '';
+                    // Pour chaque compétence de la catégorie
+                    skills.forEach(skill => {
+                        // Ajoute le HTML pour afficher la compétence avec sa barre de progression
+                        html += `
+                            <div class="skill-item">
+                                <h3>${skill.title}</h3>
+                                <p>${skill.content}</p>
+                                <div class="progress-container">
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: ${skill.level}%"></div>
+                                    </div>
+                                    <span class="progress-text">${skill.level}%</span>
+                                </div>
+                            </div>
+                        `;
+                    });
+                    // Insère le HTML généré dans la section
+                    skillsSection.innerHTML = html;
+                
+                    // Ajoute les écouteurs d'événements pour chaque compétence
+                    document.querySelectorAll('.skill-item').forEach(item => {
+                        item.addEventListener('click', () => {
+                            // Récupère le contenu détaillé de la compétence
+                            const content = item.querySelector('.skill-content');
+                            // Affiche/cache le contenu au clic
+                            if (content.style.display === 'block') {
+                                content.style.display = 'none';
+                            } else {
+                                // Cache tous les autres contenus détaillés
+                                document.querySelectorAll('.skill-content').forEach(c => c.style.display = 'none');
+                                // Affiche le contenu de la compétence cliquée
+                                content.style.display = 'block';
+                            }
+                        });
+                    });
+                }
+                
+                // Gestion du menu principal des catégories
+                document.querySelectorAll('.main-menu-item').forEach(item => {
+                    item.addEventListener('click', () => {
+                        // Retire la classe active de tous les éléments du menu
+                        document.querySelectorAll('.main-menu-item').forEach(i => i.classList.remove('active'));
+                        // Ajoute la classe active à l'élément cliqué
+                        item.classList.add('active');
+                        // Met à jour le contenu avec la catégorie sélectionnée
+                        updateSkillsContent(item.dataset.category);
+                    });
+                });
+                
+                // Initialise l'affichage avec la catégorie "réseaux" par défaut
+                    updateSkillsContent('reseaux');
+                </script>
 
-        <!-- Section CV -->
-        <div id="cv" class="content">
-            <h1>CV</h1>
-            <div class="cv-section">
-                <div class="cv-content">
-                    <h2>Mon Curriculum Vitae</h2>
-                    <p>Téléchargez mon CV pour plus d'informations sur mon parcours et mes compétences.</p>
-                    <button class="cv-button" onclick="window.open('assets/pdf/CV_01_2025.pdf', '_blank')">
-                        Télécharger mon CV
-                    </button>
+        <!-- Section Divers et CV -->
+            <div>
+                    <!-- Section Divers -->
+                    <div id="divers" class="content">
+                        <h1>Divers</h1>
+                        <div class="divers-container">
+                            <div class="divers-box">
+                                <div>
+                                    <h3>Lecture</h3>
+                                    <p>Passionné par les œuvres de science-fiction et les mangas.</p>
+                                </div>
+                                <img src="/assets/image/icon/1984.jpg" alt="Placeholder Image" class="divers-icon" width="90" height="160" />
+                                <img src="/assets/image/icon/berserk.jpg" alt="Placeholder Image" class="divers-icon" width="110" height="160" />
+                            </div>
+                            <div class="divers-box">
+                                <div>
+                                    <h3>Cuisine</h3>
+                                    <p>Préparation régulière de plats et pâtisseries pour ma famille.</p>
+                                </div>
+                                <img src="/assets/image/icon/cuisine.png" alt="Placeholder Image" class="divers-icon" width="250" height="160" />
+                            </div>
+                            <div class="divers-box">
+                                <div>
+                                    <h3>Impression 3D</h3>
+                                    <p>Modélisation et impression 3D</p>
+                                </div>
+                                <img src="/assets/image/icon/imprimante3d.png" alt="Placeholder Image" class="divers-icon" width="110" height="160" />
+                            </div>
+                                                                                 
+                        </div>
+                    </div>
+                <!-- Section Projets -->
+                <div id="cv" class="content">
+                    <h1>Projets</h1>
+                    <div class="cv-section">
+                        <div class="cv-content">
+                            <h2>SAE15</h2>
+                            <p>SAE15 : Traitement de données</p>
+                            <button class="projet-button" onclick="window.open('assets/pdf/SAE15_portfolio.pdf', '_blank')">
+                                Accéder au projet
+                            </button>
+                        </div>
+                        <img src="/assets/image/icon/icon_sae15.png" alt="icone sae 15" class="projet-icon" />
+                    </div>
                 </div>
-                <img src="/assets/image/icon/icon_CV_01_2025.jpg    " alt="Aperçu du CV" class="cv-preview">
-            </div>
-        </div>
-    </div>
 
-    <!-- Section Contact -->
+                    <!-- Section CV -->
+                    <div id="cv" class="content">
+                        <h1>CV</h1>
+                        <div class="cv-section">
+                            <div class="cv-content">
+                                <h2>Mon Curriculum Vitae</h2>
+                                <p>Téléchargez mon CV.</p>
+                                <button class="cv-button" onclick="window.open('assets/pdf/CV_01_2025.pdf', '_blank')">
+                                    Télécharger mon CV
+                                </button>
+                            </div>
+                            <img src="/assets/image/icon/icon_CV_01_2025.jpg" alt="Aperçu du CV" class="cv-preview" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Section Contact -->
     <div id="meContacter" class="contact-section">
         <h1>Contact</h1>
         <p>Vous pouvez me contacter via les informations ci-dessous :</p>
